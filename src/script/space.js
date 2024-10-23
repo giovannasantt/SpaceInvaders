@@ -4,8 +4,8 @@ let rows = 25;
 let columns = 32;
 
 let board;
-let boardWidth = tileSize * columns; // 32 * 16
-let boardHeight = tileSize * rows; // 32 * 16
+let boardWidth = tileSize * columns; // 32 * 32 = 1024
+let boardHeight = tileSize * rows; // 32 * 25 = 800
 let context;
 
 //ship
@@ -56,13 +56,13 @@ window.onload = function() {
 
     //load images
     shipImg = new Image();
-    shipImg.src = "./ship.png";
+    shipImg.src = "src/img/dispara_ervilha.png";
     shipImg.onload = function() {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     }
 
     alienImg = new Image();
-    alienImg.src = "./alien.png";
+    alienImg.src = "src/img/alien.png";
     createAliens();
 
     requestAnimationFrame(update);
@@ -80,7 +80,7 @@ function update() {
     context.clearRect(0, 0, board.width, board.height);
 
     //ship
-    context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
+    context.drawImage(shipImg, ship.x, ship.y, 50, ship.height);
 
     //alien
     for (let i = 0; i < alienArray.length; i++) {
@@ -110,8 +110,11 @@ function update() {
     for (let i = 0; i < bulletArray.length; i++) {
         let bullet = bulletArray[i];
         bullet.y += bulletVelocityY;
-        context.fillStyle="white";
-        context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+        //context.fillStyle="white";
+        bulletImg = new Image();
+        bulletImg.src = "src/img/ervilha.png";
+        context.drawImage(bulletImg, bullet.x - 25, bullet.y, 50, 50)
+        context.fillRect(bulletImg, bullet.x, bullet.y, bullet.width, bullet.height);
 
         //bullet collision with aliens
         for (let j = 0; j < alienArray.length; j++) {
