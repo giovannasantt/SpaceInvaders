@@ -56,13 +56,13 @@ window.onload = function() {
 
     //load images
     shipImg = new Image();
-    shipImg.src = "src/img/dispara_ervilha.png";
+    shipImg.src = "/src/img/dispara_ervilha.png";
     shipImg.onload = function() {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     }
 
     alienImg = new Image();
-    alienImg.src = "src/img/alien.png";
+    alienImg.src = "/src/img/invader1.png";
     createAliens();
 
     requestAnimationFrame(update);
@@ -112,7 +112,7 @@ function update() {
         bullet.y += bulletVelocityY;
         //context.fillStyle="white";
         bulletImg = new Image();
-        bulletImg.src = "src/img/ervilha.png";
+        bulletImg.src = "/src/img/ervilha.png";
         context.drawImage(bulletImg, bullet.x - 25, bullet.y, 50, 50)
         context.fillRect(bulletImg, bullet.x, bullet.y, bullet.width, bullet.height);
 
