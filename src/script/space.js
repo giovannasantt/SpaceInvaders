@@ -1,4 +1,4 @@
-//board
+ //board
 let tileSize = 32;
 let rows = 25;
 let columns = 32;
@@ -32,6 +32,9 @@ let alienX = tileSize;
 let alienY = tileSize;
 let alienImg;
 
+let invaderInt;
+let invaderString;
+
 let alienRows = 2;
 let alienColumns = 3;
 let alienCount = 0; //number of aliens to defeat
@@ -61,8 +64,24 @@ window.onload = function() {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     }
 
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    
+    invaderInt = getRandomInt(3)
+    switch (invaderInt) {
+        case 0:
+            invaderString = "invader1"
+            break;
+        case 1:
+            invaderString = "invader2"
+            break;
+        case 2:
+            invaderString = "invader3"
+            break;
+    }
     alienImg = new Image();
-    alienImg.src = "/src/img/invader1.png";
+    alienImg.src = "/src/img/" + invaderString + ".png";
     createAliens();
 
     requestAnimationFrame(update);
@@ -70,10 +89,16 @@ window.onload = function() {
     document.addEventListener("keyup", shoot);
 }
 
+function abrirGameOver(url) {
+    const win = window.open(url, '_blank')
+    win.focus
+}
+
 function update() {
     requestAnimationFrame(update);
 
     if (gameOver) {
+        abrirGameOver("./gameover.html")    
         return;
     }
 
@@ -152,8 +177,8 @@ function update() {
 
     //score
     context.fillStyle="white";
-    context.font="16px courier";
-    context.fillText(score, 5, 20);
+    context.font="30px Comic Sans MS";
+    context.fillText(score, 5, 30);
 }
 
 function moveShip(e) {
