@@ -1,3 +1,7 @@
+const musica = new Audio('/src/sons/musica.mp3')
+const tiro = new Audio('/src/sons/tiro.mp3')
+const morteInvader = new Audio('/src/sons/morteInvader.mp3')
+ 
  //board
 let tileSize = 32;
 let rows = 25;
@@ -87,6 +91,9 @@ window.onload = function() {
     requestAnimationFrame(update);
     document.addEventListener("keydown", moveShip);
     document.addEventListener("keyup", shoot);
+    document.addEventListener("keydown", (e) => {
+        musica.play()
+    })
 }
 
 function abrirGameOver(url) {
@@ -149,6 +156,7 @@ function update() {
                 alien.alive = false;
                 alienCount--;
                 score += 100;
+                morteInvader.play()
             }
         }
     }
@@ -217,6 +225,7 @@ function shoot(e) {
     }
 
     if (e.code == "Space") {
+        tiro.play()
         //shoot
         let bullet = {
             x : ship.x + shipWidth*15/32,
