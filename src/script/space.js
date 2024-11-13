@@ -1,7 +1,11 @@
 const musica = new Audio('/src/sons/musica.mp3')
+musica.volume = 1;
 const tiro = new Audio('/src/sons/tiro.mp3')
+tiro.volume = 0.7
 const morteInvader = new Audio('/src/sons/morteInvader.mp3')
- 
+morteInvader.volume = 0.3
+//this is fucking bullshit
+
  //board
 let tileSize = 32;
 let rows = 25;
@@ -51,6 +55,7 @@ let bulletVelocityY = -10; //bullet moving speed
 let score = 0;
 let gameOver = false;
 
+//Fazer etec foi um ero
 window.onload = function() {
     board = document.getElementById("board");
     board.width = boardWidth;
@@ -93,6 +98,14 @@ window.onload = function() {
     document.addEventListener("keyup", shoot);
     document.addEventListener("keydown", (e) => {
         musica.play()
+        if (gameOver == true) {
+            musica.stop()
+        }
+    })
+    document.addEventListener("keydown", (e) => {
+        if (e.code == "KeyR") {
+            gameOver = true
+        }
     })
 }
 
@@ -112,7 +125,7 @@ function update() {
     context.clearRect(0, 0, board.width, board.height);
 
     //ship
-    context.drawImage(shipImg, ship.x, ship.y, 50, ship.height);
+    context.drawImage(shipImg, ship.x, ship.y, 70, 60);
 
     //alien
     for (let i = 0; i < alienArray.length; i++) {
@@ -188,6 +201,7 @@ function update() {
     context.font="30px Comic Sans MS";
     context.fillText(score, 5, 30);
 }
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 function moveShip(e) {
     if (gameOver) {

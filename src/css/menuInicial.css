@@ -1,7 +1,11 @@
 body {
-    background: rgb(31,73,16);
+    /*background: rgb(31,73,16);
     background: linear-gradient(90deg, rgba(31,73,16,1) 0%, rgba(53,111,32,1) 30%, rgba(50,153,13,1) 50%, rgba(62,124,40,1) 70%, rgba(32,78,15,1) 100%);
-    display: flex;
+    */display: flex;
+    background-image: url("/src/img/menuStart.jpeg");
+    background-repeat: no-repeat;
+    background-size: 1600px 900px;
+    background-position-x: 30%;
     justify-content: center;  
     align-items: center;    
     height: 100vh;
@@ -11,18 +15,16 @@ body {
     color: whitesmoke;
 }
 
-h1 {
-    margin-bottom: 20px; 
-}
-
 .botao {
     display: flex;
     justify-content: center; 
     align-items: center;  
+    position: absolute;
+    margin-bottom: 125px;
 }
 
 #btn {
-    background-color: #4CAF50;
+    /*background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -33,7 +35,27 @@ h1 {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;*/
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40B3A2;
+    min-width: 200px;
+    border: 0;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+    
+    margin-right: 100px;
 }
 
 #btn:hover {
