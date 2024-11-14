@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="/src/css/gameOver.css">
 </head>
 <body>
-    <h1>Game Over</h1>
-    <button><a href="jogo.html" id="reiniciar">Reiniciar</a></button>
-    <button><a href="index.html" id="menuVoltar">Voltar ao Menu</a></button>
+    <div class="botao">
+        <!--<button><a href="jogo.html" id="reiniciar">Reiniciar</a></button>
+        <button><a href="index.html" id="menuVoltar">Voltar ao Menu</a></button>-->
+        <input type="button" name="btnReiniciar" id="reiniciar" value="Reiniciar Jogo" onclick="location.href = './gameOver.html'">
+        <input type="button" name="btnVoltar" id="menuVoltar" value="Voltar ao Menu" onclick="location.href = './index.html'">
+    </div>    
 </body>
 </html>

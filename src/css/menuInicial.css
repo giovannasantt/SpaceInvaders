@@ -4,7 +4,7 @@ body {
     */display: flex;
     background-image: url("/src/img/menuStart.jpeg");
     background-repeat: no-repeat;
-    background-size: 1600px 900px;
+    background-size: 2000px 1150px;
     background-position-x: 30%;
     justify-content: center;  
     align-items: center;    
@@ -40,7 +40,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    background: #40B3A2;
+    background: black;
     min-width: 200px;
     border: 0;
     border-radius: 18px;
@@ -48,14 +48,13 @@ body {
     box-sizing: border-box;
     padding: 16px 20px;
     color: #fff;
-    font-size: 12px;
+    font-size: 35px;
     font-weight: 600;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     overflow: hidden;
     cursor: pointer;
-    
-    margin-right: 100px;
+    margin-right: 25px;
 }
 
 #btn:hover {

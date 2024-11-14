@@ -6,5 +6,9 @@ body {
 }
 
 #board {
-    background-color: black;
+    background-image: url("/src/img/fundo.jpeg");
+    background-size: 1100px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 80%;
 }
